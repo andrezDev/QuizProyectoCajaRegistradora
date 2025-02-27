@@ -1,7 +1,6 @@
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -39,7 +38,6 @@ public class FrmCajaRegistradora extends JFrame {
         getContentPane().add(labelDato);
 
         cmbDenominaciones = new JComboBox();
-        
         DefaultComboBoxModel modelDenominaciones = new DefaultComboBoxModel(opcDenominaciones);
         cmbDenominaciones.setModel(modelDenominaciones);
         cmbDenominaciones.setBounds(120, 20, 100, 25);
@@ -102,8 +100,7 @@ public class FrmCajaRegistradora extends JFrame {
                     
                     if (mtzExistencia[i][0] == Integer.parseInt(denominacionEscogida)){
                         mtzExistencia[i][1] = Integer.parseInt(textDato.getText());
-                    }    
-                                        
+                    }                                         
                 } 
                 catch (Exception ex) {
                     textDato.setText("");
@@ -165,7 +162,7 @@ public class FrmCajaRegistradora extends JFrame {
                                 numEntrada = 0;
                                 break;
                             } 
-                                                
+
                             mtzDevolver [j][0] =  String.valueOf(sumaCantidad);
                             mtzDevolver [j][1] = presentacion; 
                             mtzDevolver [j][2] = String.valueOf(mtzExistencia [i][0]);  
@@ -174,11 +171,11 @@ public class FrmCajaRegistradora extends JFrame {
                         }
                     }           
                 } 
-                     
+
                 DefaultTableModel datosDevuelta = new DefaultTableModel(mtzDevolver, encabezados);
                 tablaDevuelta.setModel(datosDevuelta);  
             }
-            else{
+            else {
                 textDato.setText("");
                 JOptionPane.showMessageDialog(null, "Por favor ingresar un número entero positivo");
             }
